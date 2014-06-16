@@ -6,21 +6,53 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
+/**
+ * Sample data.
+ * 
+ * @author Hendrik Stein
+ *
+ */
 public final class SampleData {
 
+	/**
+	 * Utility class.
+	 */
 	private SampleData() {
 		// Utility
 	}
 
+	/**
+	 * Get sample accounts with positive balance.
+	 * 
+	 * @param amount
+	 *            the amount of accounts with positive balance.
+	 * @return the list of accounts
+	 */
 	public static List<Account> getSampleAccountsPositiveBalance(int amount) {
 		return getAccounts(amount, 1000);
 
 	}
 
+	/**
+	 * Get sample accounts with negative balance.
+	 * 
+	 * @param amount
+	 *            the amount of accounts with negative balance.
+	 * @return the list of accounts
+	 */
 	public static List<Account> getSampleAccountsNegativeBalance(int amount) {
 		return getAccounts(amount, -1000);
 	}
 
+	/**
+	 * Create accounts.
+	 * 
+	 * @param amount
+	 *            the amount
+	 * @param peak
+	 *            the positive or negative peak
+	 * @return the list of accounts
+	 */
 	private static List<Account> getAccounts(int amount, int peak) {
 		List<Account> list = new ArrayList<>();
 		for (int i = 0; i < amount; i++) {
@@ -32,4 +64,5 @@ public final class SampleData {
 		}
 		return list;
 	}
+	
 }
